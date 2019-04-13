@@ -83,53 +83,25 @@ def main(args):
 
             running_loss = 0.0
             running_corrects = 0
-
-            images = data[0]
-            labels = data[1]
-
-            # Resize the image to 299x299? (Method 1)
-            from skimage.transform import resize
-            num_img = images.shape[0]
-            num_channel = images.shape[1]
-            desire_size = 299
-            img_resize = np.empty([num_img,num_channel,desire_size,desire_size])
-            for img in images:
-                # Convert from Tensor to numpy
-                img_npimg = img.numpy()
-                # Resize the image
-                img_npimg = resize(img_npimg,(num_channel,desire_size,desire_size))
-                # Add the resized channel
-                img_resize[i] = img_npimg
-            # Convert numpy to Tensor
-            images = torch.from_numpy(img_resize)
-
-            # # Resize the image to 299x299? (Method 2)
-            # from skimage.transform import resize
-            # num_img = images[0]
-            # num_channel = images[1]
-            # desire_size = 299
-            # images = torch.from_numpy(resize(images.numpy(),(num_img,num_channel,desire_size,desire_size)))
-
-            # # mini-batch (Move input to GPU)
-            # images = data[0].to(device)
-            # labels = data[1].type(torch.FloatTensor).to(device)
-
             # mini-batch (Move input to GPU)
-            images = images.type(torch.FloatTensor).to(device)
-            labels = images.type(torch.FloatTensor).to(device)
+            images = data[0].type(torch.FloatTensor).to(device)
+            labels = data[1].type(torch.int64).to(device)
 
             # zero the parameter gradients
             optimizer.zero_grad()
 
             # Forward, backward and optimize
-            outputs = model(images)
+            outputs,aux = model(images)
+            labels = torch.max(labels.long(), 1)[1]
             _, preds = torch.max(outputs.data, 1)
+            # print('\npred:{}\tlabel:{}\n'.format(preds[0].cpu().numpy(),labels))
+            # print('\noutputs:{}\tlabels:{}\n'.format(outputs.cpu().type(), labels.type()))
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
 
             # Current batch performance
-            running_loss += loss.data[0]
+            running_loss += loss
             running_corrects += torch.sum(preds == labels.data)
 
             data_size += 4
@@ -200,6 +172,7 @@ def main(args):
 #             # print('labels:{}'.format(labels.long()))
 
 #             labels = torch.max(labels.long(), 1)[1]
+#             # print('\noutputs:{}\tlabels:{}\n'.format(outputs.cpu().type(), labels.type()))
 #             loss = criterion(outputs, labels)
 #             loss.backward()
 #             optimizer.step()
