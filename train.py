@@ -166,7 +166,7 @@ def main(args):
                         torch.save(model.state_dict(), os.path.join(args.model_path, model_name))
 
                 epoch_loss = running_loss / data_size
-                epoch_acc = running_corrects.item() / data_size # running_corrects is a torch.Tensor()
+                epoch_acc = running_corrects.item() / data_size # running_corrects is a torch.Tensor(), need .item() to extract value
                 print('Loss: {:.4f} Acc: {:.4f}'.format(epoch_loss, epoch_acc))
                 # Write log to file
                 f.write('Loss: {:.4f} Acc: {:.4f}\n'.format(epoch_loss, epoch_acc))
