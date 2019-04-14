@@ -75,22 +75,6 @@ def main(args):
     # criterion = nn.MultiLabelSoftMarginLoss()
     print("[Using small learning rate with momentum...]")
 
-    ##############
-    # Parameters #
-    ##############
-    # Number of steps per iteration
-    total_step = len(data_loader)
-    # Data size (Each step train on a batch of 4 images)
-    data_size = total_step*4
-    # Learning rate
-    learning_rate = 0.05
-    # Number of times learning rate decay
-    lr_changes = 5
-    # Define optimizer
-    optimizer = optim.SGD(list(filter(lambda p: p.requires_grad, model.parameters())), lr=learning_rate, momentum=0.9)
-    # Define learning rate scheduler
-    exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=total_step//lr_changes, gamma=learning_rate//lr_changes)
-
     # ##############
     # # Parameters #
     # ##############
@@ -102,21 +86,49 @@ def main(args):
     # learning_rate = 0.05
     # # Number of times learning rate decay
     # lr_changes = 5
-    # # Decay rate of learning rate
-    # lr_decay = 0.1
     # # Define optimizer
     # optimizer = optim.SGD(list(filter(lambda p: p.requires_grad, model.parameters())), lr=learning_rate, momentum=0.9)
     # # Define learning rate scheduler
-    # exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=total_step//lr_changes, gamma=lr_decay)
+    # exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=total_step//lr_changes, gamma=learning_rate//lr_changes)
 
-    # Train the models
+    ##############
+    # Parameters #
+    ##############
+    # Number of steps per iteration
+    total_step = len(data_loader)
+    # Data size (Each step train on a batch of 4 images)
+    data_size = total_step*4
+    # Learning rate
+    try:
+        learning_rate = args.lr # 0.05
+    except:
+        raise('Please provide learning rate')
+    # Decay rate of learning rate
+    try:
+        lr_decay = args.lr_decay # 5
+    except:
+        raise('Please provide rate of decay for learning rate')
+    # Number of times learning rate decay
+    try:
+        lr_changes = args.lr_changes
+    except:
+        raise('Please provide number of decay times for learning rate')
+    # Define optimizer
+    optimizer = optim.SGD(list(filter(lambda p: p.requires_grad, model.parameters())), lr=learning_rate, momentum=0.9)
+    # Define learning rate scheduler
+    exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=total_step//lr_changes, gamma=lr_decay)
 
+    ###################
+    # Train the model #
+    ###################
+    # File name to save model
+    model_name = ''.join(['net_','epoch-',str(args.num_epochs),'_lr-',str(learning_rate),'_decay-',str(lr_decay),'.ckpt'])
     # Move model to GPU
     model.to(device)
     # Start time
     start = time.time()
     for epoch in range(args.num_epochs):
-        # print('\nCurrent learning rate:{}\n'.format(get_lr(optimizer)))
+        print('\nCurrent learning rate:{}\n'.format(get_lr(optimizer)))
         t1 = time.time()
 
         running_loss = 0.0
@@ -252,6 +264,9 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('--lr', type=float, default=None, help='learning rate for training model')
+    parser.add_argument('--lr_decay', type=float, default=None, help='rate of decay for learning rate')
+    parser.add_argument('--lr_changes', type=int, default=None, help='number of decay times for learning rate')
     parser.add_argument('--model_path', type=str, default='models/', help='path for saving trained models')
     parser.add_argument('--dataset_path', type=str, default='../A2D', help='a2d dataset')
     parser.add_argument('--log_step', type=int, default=10, help='step size for prining log info')
