@@ -91,23 +91,23 @@ def main(args):
     # Define learning rate scheduler
     exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=total_step//lr_changes, gamma=learning_rate//lr_changes)
 
-    ##############
-    # Parameters #
-    ##############
-    # Number of steps per iteration
-    total_step = len(data_loader)
-    # Data size (Each step train on a batch of 4 images)
-    data_size = total_step*4
-    # Learning rate
-    learning_rate = 0.05
-    # Number of times learning rate decay
-    lr_changes = 5
-    # Decay rate of learning rate
-    lr_decay = 0.1
-    # Define optimizer
-    optimizer = optim.SGD(list(filter(lambda p: p.requires_grad, model.parameters())), lr=learning_rate, momentum=0.9)
-    # Define learning rate scheduler
-    exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=total_step//lr_changes, gamma=lr_decay)
+    # ##############
+    # # Parameters #
+    # ##############
+    # # Number of steps per iteration
+    # total_step = len(data_loader)
+    # # Data size (Each step train on a batch of 4 images)
+    # data_size = total_step*4
+    # # Learning rate
+    # learning_rate = 0.05
+    # # Number of times learning rate decay
+    # lr_changes = 5
+    # # Decay rate of learning rate
+    # lr_decay = 0.1
+    # # Define optimizer
+    # optimizer = optim.SGD(list(filter(lambda p: p.requires_grad, model.parameters())), lr=learning_rate, momentum=0.9)
+    # # Define learning rate scheduler
+    # exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=total_step//lr_changes, gamma=lr_decay)
 
     # Train the models
 
