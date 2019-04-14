@@ -20,6 +20,11 @@ from torch.optim import lr_scheduler
 # use gpu if cuda can be detected
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+# Extract the learning rate
+def get_lr(optimizer):
+    for param_group in optimizer.param_groups:
+        return param_group['lr']
+
 ########################################
 # Inception_v3 pre-trained on ImageNet #
 ########################################
@@ -69,24 +74,54 @@ def main(args):
     criterion = nn.BCEWithLogitsLoss()
     # criterion = nn.MultiLabelSoftMarginLoss()
     print("[Using small learning rate with momentum...]")
-    optimizer = optim.SGD(list(filter(lambda p: p.requires_grad, model.parameters())), lr=0.05, momentum=0.9)
+
+    ##############
+    # Parameters #
+    ##############
+    # Number of steps per iteration
+    total_step = len(data_loader)
+    # Data size (Each step train on a batch of 4 images)
+    data_size = total_step*4
+    # Learning rate
+    learning_rate = 0.05
+    # Number of times learning rate decay
+    lr_changes = 5
+    # Define optimizer
+    optimizer = optim.SGD(list(filter(lambda p: p.requires_grad, model.parameters())), lr=learning_rate, momentum=0.9)
     # Define learning rate scheduler
-    exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.01)
+    exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=total_step//lr_changes, gamma=learning_rate//lr_changes)
+
+    ##############
+    # Parameters #
+    ##############
+    # Number of steps per iteration
+    total_step = len(data_loader)
+    # Data size (Each step train on a batch of 4 images)
+    data_size = total_step*4
+    # Learning rate
+    learning_rate = 0.05
+    # Number of times learning rate decay
+    lr_changes = 5
+    # Decay rate of learning rate
+    lr_decay = 0.1
+    # Define optimizer
+    optimizer = optim.SGD(list(filter(lambda p: p.requires_grad, model.parameters())), lr=learning_rate, momentum=0.9)
+    # Define learning rate scheduler
+    exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=total_step//lr_changes, gamma=lr_decay)
 
     # Train the models
 
     # Move model to GPU
     model.to(device)
-    total_step = len(data_loader)
-    data_size = total_step*4
     # Start time
     start = time.time()
     for epoch in range(args.num_epochs):
+        # print('\nCurrent learning rate:{}\n'.format(get_lr(optimizer)))
         t1 = time.time()
 
         running_loss = 0.0
         running_corrects = 0
-        for i, data in tqdm(enumerate(data_loader)):
+        for i, data in enumerate(data_loader):
 
             # mini-batch (Move input to GPU)
             images = data[0].type(torch.FloatTensor).to(device)
@@ -115,6 +150,7 @@ def main(args):
             if i % args.log_step == 0:
                 print('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}'
                       .format(epoch, args.num_epochs, i, total_step, loss.item()))
+                # print('preds:{}\tlables:{}'.format(preds,labels))
 
             # Save the model checkpoints
             if (i + 1) % args.save_step == 0:
