@@ -117,6 +117,8 @@ def main(args):
     else:
         # Create log file
         with open(log_file, 'w') as f:
+            # Write the configuration to log file
+            f.write(str(args))
             for epoch in range(args.num_epochs):
                 # Change of learning rate
                 my_lr_scheduler.step()
@@ -175,6 +177,8 @@ def main(args):
                 print('Current epoch training time: {} minutes'.format((t2 - t1)/60))
                 # Write log to file
                 f.write('Current epoch training time: {} minutes\n'.format((t2 - t1)/60))
+                # Save model
+                torch.save(model.state_dict(), os.path.join(args.model_path, model_name))
 
     # End time
     end = time.time()
@@ -202,3 +206,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
     print(args)
 main(args)
+
+# epoch_num = 100
+# lr = 0.5
+# lr_changes = 7
+# step = epoch_num//lr_changes
+# for i in range(lr_changes+1):
+#     print('Epoch:{}.lr:{}'.format(i*step,lr))
+#     lr = lr*0.5
+    
+
