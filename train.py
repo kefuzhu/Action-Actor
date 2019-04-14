@@ -178,7 +178,7 @@ def main(args):
 
     # End time
     end = time.time()
-    torch.save(model.state_dict(), os.path.join(args.model_path, 'net.ckpt'))
+    torch.save(model.state_dict(), os.path.join(args.model_path, model_name))
     print('Total training times spent: {} minutes'.format((end - start)/60))
     # Write log to file
     f.write('Total training times spent: {} minutes'.format((end - start)/60))
