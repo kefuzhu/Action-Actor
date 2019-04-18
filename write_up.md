@@ -95,3 +95,7 @@ We freezed the convolutional layers in the pre-trained inception_v3 model and tr
 ### Performance on validation set
 
 The fine-tuned inception_v3 model can reach `Precision: 47.6 Recall: 50.0 F1: 46.9` on the validation dataset
+
+## Task 2: Actor-Action Detection
+
+Model Used: e2e_faster_rcnn_R-101-FPN_1x.yaml
