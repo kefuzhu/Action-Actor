@@ -98,4 +98,4 @@ The fine-tuned inception_v3 model can reach `Precision: 47.6 Recall: 50.0 F1: 46
 
 ## Task 2: Actor-Action Detection
 
-Model Used: e2e_faster_rcnn_R-101-FPN_1x.yaml
+Model Used: e2e_faster_rcnn_R-50-FPN_2x.yaml
