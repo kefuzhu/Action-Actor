@@ -9,23 +9,17 @@ from torch.optim import lr_scheduler
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
 
-from fcn import VGGNet, FCN32s, FCN16s, FCN8s, FCNs
-# from Cityscapes_loader import CityscapesDataset
-# from CamVid_loader import CamVidDataset
-
-from matplotlib import pyplot as plt
-import numpy as np
-import time
-import sys
-import os
-
 from loader.a2d_dataset import A2DDataset
 from cfg.cfg_a2d import train as train_cfg
 import torch.nn.functional as F
 import argparse
+import os
+import time
 
 import pdb
 import torchfcn
+from datetime import datetime
+from pytz import timezone
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -57,6 +51,7 @@ def get_parameters(model,bias=False):
         else:
             raise ValueError('Unexpected modules: %s' %str(m))
 
+# Cross entropy loss in 2D
 def cross_entropy2d(input,target,weight=None,size_average=False):
     n,c,h,w = input.size()
     log_p = F.log_softmax(input,dim=1)
@@ -78,52 +73,55 @@ def get_lr(optimizer):
         return param_group['lr']
 
 def main(args):
+    # If no repository exists for storing trained model, create one
     if not os.path.exists(args.model_path):
         os.makedirs(args.model_path)
 
+    # If no repository exists for storing log during training, create one
     if not os.path.exists('train_log/'):
         os.makedirs('train_log/')
 
+    # Load the dataset into DataLoader
     train_dataset = A2DDataset(train_cfg)
     train_loader = DataLoader(train_dataset, args.batch_size, shuffle=True, num_workers = args.num_workers)
 
-    # vgg_model = VGGNet(requires_grad=False, remove_fc=True)
-    # fcn_model = FCNs(pretrained_net=vgg_model, n_class=n_class)
-
-
-    # if use_gpu:
-    #     vgg_model = vgg_model.cuda()
-    #     fcn_model = fcn_model.cuda()
-    #     fcn_model = nn.DataParallel(fcn_model, device_ids=num_gpu)
-    #     print("Finish cuda loading...")
-
+    # Obtain the structure of FCN32
     model = torchfcn.models.FCN32s(n_class=args.num_cls).to(device)
 
+    # If model has been trained before, load the previous parameters and continue training
     if os.path.exists(args.model_path+'net.ckpt'):
         model.load_state_dict(torch.load(os.path.join(args.model_path,'net.ckpt')))
         print('Load model parameters from previous training...')
 
 
+    # Total number of steps per epoch
+    total_step = len(train_loader)
+    # Size of training data
+    data_size = total_step * args.batch_size
+
+    # Optimizer
     optimizer = torch.optim.SGD(
             [
                 {'params':get_parameters(model,bias=False)},
                 {'params':get_parameters(model,bias=True),
                 'lr':1e-10*2, 'weight_decay':0},
             ],
-            lr=1e-10,
+            lr=args.lr, #lr=1e-10
             momentum=0.9,
             weight_decay = 0.00005)
+    # Learning rate scheduler
+    scheduler = lr_scheduler.StepLR(optimizer, step_size = total_step//args.lr_changes, gamma = args.lr_decay) # step_size = 7, gamma =0.1
 
-    scheduler = lr_scheduler.StepLR(optimizer, step_size = 7, gamma =0.1)
-
-
-    total_step = len(train_loader)
-    data_size = total_step * args.batch_size
-
+    # Start time of training process
     start = time.time()    
-    
+    # Print log
     print('Start training...')
-    log_file = 'train_log/log.txt'
+    # Obtain current time
+    tz = timezone('EST')
+    time_now = list(datetime.now().timetuple())[:5] # Obtain current time up to minute
+    str_time_now = '_'.join(list(map(lambda x: str(x), time_now)))
+    # Create the log file name
+    log_file = 'train_log/log-' + str_time_now  + '.txt'
     # Check if file already exists
     if os.path.isfile(log_file):
         raise(Exception('File already exists'))
@@ -140,35 +138,41 @@ def main(args):
                 f.write('-'*50)
                 f.write('\n')
                 f.write('Current learning rate:{}\n'.format(get_lr(optimizer)))
-
-                ts = time.time()
-
+                # epoch start time
+                epoch_start = time.time()
+                # Initialize loss for current epoch
                 running_loss = 0.0
 
-                # pdb.set_trace()
-                for i, batch_data in enumerate(train_loader):            
+                # Train the data by batch
+                for i, batch_data in enumerate(train_loader):   
+                    # Extract the image and label, push to GPU         
                     imgs = batch_data[0].to(device)
                     labels = batch_data[1].to(device)
                     # Feed forward
                     outputs = model(imgs)
                     # Calculate the loss
                     loss = cross_entropy2d(outputs,labels)
+                    # Increment the running loss by current batch loss
                     running_loss += loss
+                    # Compute the gradient
                     loss.backward()
+                    # Update the parameters
                     optimizer.step()
                     # Zero the gradients
                     optimizer.zero_grad()
-                    # pdb.set_trace()
 
+                    # Print log every 1/10 of the total step
                     if i % (total_step//10) == 0:
                         # pdb.set_trace()
                         print("Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}".format(epoch, args.num_epochs, i, total_step, loss.item()))
                         f.write("Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}\n".format(epoch, args.num_epochs, i, total_step, loss.item()))
                 
-                print("Finished epoch {}, training time: {:.2f}, Loss:{:.4f}".format(epoch, (time.time() - ts)/60, running_loss.item()/data_size))
-                f.write("Finished epoch {}, training time: {:.2f}, Loss:{:.4f}\n".format(epoch, (time.time() - ts)/60, running_loss.item()/data_size))
+                # Print log when finished current epoch training
+                print("Finished epoch {}, training time: {:.2f} minutes, Loss:{:.4f}".format(epoch, (time.time() - epoch_start)/60, running_loss.item()/data_size))
+                f.write("Finished epoch {}, training time: {:.2f} minutes, Loss:{:.4f}\n".format(epoch, (time.time() - epoch_start)/60, running_loss.item()/data_size))
                 torch.save(model.state_dict(), os.path.join(args.model_path, 'net.ckpt'))
 
+            # Print log when finished the entire training process
             print('Finished training. Total training times spent: {:.2f} minutes'.format((time.time() - start)/60))
             f.write('Finished training. Total training times spent: {:.2f} minutes\n'.format((time.time() - start)/60))
             # Close the log file
@@ -187,6 +191,9 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('--lr', type=float, default=1e-10, help='learning rate for training model')
+    parser.add_argument('--lr_decay', type=float, default=0.5, help='rate of decay for learning rate')
+    parser.add_argument('--lr_changes', type=int, default=2, help='number of decay times for learning rate')
     parser.add_argument('--model_path', type=str, default='models/', help='path for saving trained models')
     parser.add_argument('--dataset_path', type=str, default='../A2D', help='a2d dataset')
     parser.add_argument('--log_step', type=int, default=10, help='step size for prining log info')
