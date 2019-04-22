@@ -1,0 +1,496 @@
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [0/50], Step [0/297], Loss: 944803.8125
+Epoch [0/50], Step [29/297], Loss: 1064336.3750
+Epoch [0/50], Step [58/297], Loss: 1044216.4375
+Epoch [0/50], Step [87/297], Loss: 685956.4375
+Epoch [0/50], Step [116/297], Loss: 705252.9375
+Epoch [0/50], Step [145/297], Loss: 1142186.2500
+Epoch [0/50], Step [174/297], Loss: 1101405.5000
+Epoch [0/50], Step [203/297], Loss: 953724.0000
+Epoch [0/50], Step [232/297], Loss: 1194199.3750
+Epoch [0/50], Step [261/297], Loss: 1030843.6875
+Epoch [0/50], Step [290/297], Loss: 690443.1250
+Finished epoch 0, training time: 21.91 minutes, Loss:59153.1717
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [1/50], Step [0/297], Loss: 916726.8750
+Epoch [1/50], Step [29/297], Loss: 620881.5000
+Epoch [1/50], Step [58/297], Loss: 1530392.8750
+Epoch [1/50], Step [87/297], Loss: 836902.8125
+Epoch [1/50], Step [116/297], Loss: 803244.6250
+Epoch [1/50], Step [145/297], Loss: 962880.8125
+Epoch [1/50], Step [174/297], Loss: 998259.6250
+Epoch [1/50], Step [203/297], Loss: 931808.3750
+Epoch [1/50], Step [232/297], Loss: 629888.4375
+Epoch [1/50], Step [261/297], Loss: 1027381.1875
+Epoch [1/50], Step [290/297], Loss: 909083.8750
+Finished epoch 1, training time: 21.90 minutes, Loss:58539.2323
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [2/50], Step [0/297], Loss: 865544.3750
+Epoch [2/50], Step [29/297], Loss: 904349.5000
+Epoch [2/50], Step [58/297], Loss: 1043422.8750
+Epoch [2/50], Step [87/297], Loss: 732324.5625
+Epoch [2/50], Step [116/297], Loss: 923879.5000
+Epoch [2/50], Step [145/297], Loss: 790286.5625
+Epoch [2/50], Step [174/297], Loss: 895408.8125
+Epoch [2/50], Step [203/297], Loss: 829242.1250
+Epoch [2/50], Step [232/297], Loss: 1078579.7500
+Epoch [2/50], Step [261/297], Loss: 923243.5625
+Epoch [2/50], Step [290/297], Loss: 1162102.3750
+Finished epoch 2, training time: 21.91 minutes, Loss:58878.5051
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [3/50], Step [0/297], Loss: 1009180.8125
+Epoch [3/50], Step [29/297], Loss: 1241218.3750
+Epoch [3/50], Step [58/297], Loss: 1223545.1250
+Epoch [3/50], Step [87/297], Loss: 670629.1875
+Epoch [3/50], Step [116/297], Loss: 1195875.6250
+Epoch [3/50], Step [145/297], Loss: 1362376.1250
+Epoch [3/50], Step [174/297], Loss: 634880.3125
+Epoch [3/50], Step [203/297], Loss: 792953.3750
+Epoch [3/50], Step [232/297], Loss: 947497.7500
+Epoch [3/50], Step [261/297], Loss: 782491.7500
+Epoch [3/50], Step [290/297], Loss: 815460.6875
+Finished epoch 3, training time: 21.92 minutes, Loss:58771.7576
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [4/50], Step [0/297], Loss: 971218.3125
+Epoch [4/50], Step [29/297], Loss: 1169456.0000
+Epoch [4/50], Step [58/297], Loss: 905509.8125
+Epoch [4/50], Step [87/297], Loss: 783247.6875
+Epoch [4/50], Step [116/297], Loss: 902095.0000
+Epoch [4/50], Step [145/297], Loss: 605950.2500
+Epoch [4/50], Step [174/297], Loss: 1211184.1250
+Epoch [4/50], Step [203/297], Loss: 796561.9375
+Epoch [4/50], Step [232/297], Loss: 719330.0000
+Epoch [4/50], Step [261/297], Loss: 1106370.7500
+Epoch [4/50], Step [290/297], Loss: 1011675.2500
+Finished epoch 4, training time: 21.91 minutes, Loss:58475.3603
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [5/50], Step [0/297], Loss: 1026622.7500
+Epoch [5/50], Step [29/297], Loss: 724835.0000
+Epoch [5/50], Step [58/297], Loss: 1055862.2500
+Epoch [5/50], Step [87/297], Loss: 866171.9375
+Epoch [5/50], Step [116/297], Loss: 733167.3750
+Epoch [5/50], Step [145/297], Loss: 1100027.7500
+Epoch [5/50], Step [174/297], Loss: 842818.5000
+Epoch [5/50], Step [203/297], Loss: 1255755.0000
+Epoch [5/50], Step [232/297], Loss: 961383.3750
+Epoch [5/50], Step [261/297], Loss: 543680.1875
+Epoch [5/50], Step [290/297], Loss: 1038649.0000
+Finished epoch 5, training time: 21.90 minutes, Loss:58073.7172
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [6/50], Step [0/297], Loss: 523033.6875
+Epoch [6/50], Step [29/297], Loss: 705546.1875
+Epoch [6/50], Step [58/297], Loss: 695251.3750
+Epoch [6/50], Step [87/297], Loss: 692960.3750
+Epoch [6/50], Step [116/297], Loss: 769072.4375
+Epoch [6/50], Step [145/297], Loss: 536952.0625
+Epoch [6/50], Step [174/297], Loss: 865279.6250
+Epoch [6/50], Step [203/297], Loss: 806620.3750
+Epoch [6/50], Step [232/297], Loss: 1156747.0000
+Epoch [6/50], Step [261/297], Loss: 919311.3125
+Epoch [6/50], Step [290/297], Loss: 1015781.0625
+Finished epoch 6, training time: 21.91 minutes, Loss:58529.8923
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [7/50], Step [0/297], Loss: 1352353.3750
+Epoch [7/50], Step [29/297], Loss: 1219289.8750
+Epoch [7/50], Step [58/297], Loss: 1251127.6250
+Epoch [7/50], Step [87/297], Loss: 739091.9375
+Epoch [7/50], Step [116/297], Loss: 949787.3125
+Epoch [7/50], Step [145/297], Loss: 1093382.6250
+Epoch [7/50], Step [174/297], Loss: 1203915.2500
+Epoch [7/50], Step [203/297], Loss: 1126144.2500
+Epoch [7/50], Step [232/297], Loss: 556146.6250
+Epoch [7/50], Step [261/297], Loss: 930018.3750
+Epoch [7/50], Step [290/297], Loss: 827017.4375
+Finished epoch 7, training time: 21.90 minutes, Loss:58376.7542
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [8/50], Step [0/297], Loss: 924508.6250
+Epoch [8/50], Step [29/297], Loss: 852041.6250
+Epoch [8/50], Step [58/297], Loss: 813757.3125
+Epoch [8/50], Step [87/297], Loss: 1322826.6250
+Epoch [8/50], Step [116/297], Loss: 927085.0625
+Epoch [8/50], Step [145/297], Loss: 659821.4375
+Epoch [8/50], Step [174/297], Loss: 733785.1875
+Epoch [8/50], Step [203/297], Loss: 711836.6875
+Epoch [8/50], Step [232/297], Loss: 1181005.0000
+Epoch [8/50], Step [261/297], Loss: 1042536.1875
+Epoch [8/50], Step [290/297], Loss: 908798.7500
+Finished epoch 8, training time: 21.93 minutes, Loss:58208.3636
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [9/50], Step [0/297], Loss: 1003084.3125
+Epoch [9/50], Step [29/297], Loss: 1006422.8125
+Epoch [9/50], Step [58/297], Loss: 1139169.1250
+Epoch [9/50], Step [87/297], Loss: 962796.9375
+Epoch [9/50], Step [116/297], Loss: 671410.4375
+Epoch [9/50], Step [145/297], Loss: 1300562.8750
+Epoch [9/50], Step [174/297], Loss: 1059915.6250
+Epoch [9/50], Step [203/297], Loss: 1320203.8750
+Epoch [9/50], Step [232/297], Loss: 1101449.8750
+Epoch [9/50], Step [261/297], Loss: 727080.0625
+Epoch [9/50], Step [290/297], Loss: 1069362.2500
+Finished epoch 9, training time: 21.90 minutes, Loss:58940.4781
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [10/50], Step [0/297], Loss: 1093687.7500
+Epoch [10/50], Step [29/297], Loss: 881542.4375
+Epoch [10/50], Step [58/297], Loss: 800993.1250
+Epoch [10/50], Step [87/297], Loss: 716766.1875
+Epoch [10/50], Step [116/297], Loss: 1159046.8750
+Epoch [10/50], Step [145/297], Loss: 938505.5000
+Epoch [10/50], Step [174/297], Loss: 1105917.0000
+Epoch [10/50], Step [203/297], Loss: 1374970.1250
+Epoch [10/50], Step [232/297], Loss: 624324.5625
+Epoch [10/50], Step [261/297], Loss: 1016455.5000
+Epoch [10/50], Step [290/297], Loss: 883462.0625
+Finished epoch 10, training time: 21.93 minutes, Loss:58269.1785
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [11/50], Step [0/297], Loss: 1012433.1875
+Epoch [11/50], Step [29/297], Loss: 592345.7500
+Epoch [11/50], Step [58/297], Loss: 822411.5625
+Epoch [11/50], Step [87/297], Loss: 1047900.8750
+Epoch [11/50], Step [116/297], Loss: 716255.7500
+Epoch [11/50], Step [145/297], Loss: 923609.6250
+Epoch [11/50], Step [174/297], Loss: 851907.4375
+Epoch [11/50], Step [203/297], Loss: 935333.3125
+Epoch [11/50], Step [232/297], Loss: 628621.0000
+Epoch [11/50], Step [261/297], Loss: 832615.6250
+Epoch [11/50], Step [290/297], Loss: 1269753.1250
+Finished epoch 11, training time: 21.90 minutes, Loss:57643.1987
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [12/50], Step [0/297], Loss: 626572.7500
+Epoch [12/50], Step [29/297], Loss: 601891.8125
+Epoch [12/50], Step [58/297], Loss: 1355251.8750
+Epoch [12/50], Step [87/297], Loss: 1111402.3750
+Epoch [12/50], Step [116/297], Loss: 881417.4375
+Epoch [12/50], Step [145/297], Loss: 816932.5625
+Epoch [12/50], Step [174/297], Loss: 630174.5000
+Epoch [12/50], Step [203/297], Loss: 679879.2500
+Epoch [12/50], Step [232/297], Loss: 847768.0625
+Epoch [12/50], Step [261/297], Loss: 1031548.8125
+Epoch [12/50], Step [290/297], Loss: 702405.6875
+Finished epoch 12, training time: 21.93 minutes, Loss:58701.2256
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [13/50], Step [0/297], Loss: 979307.6250
+Epoch [13/50], Step [29/297], Loss: 855136.4375
+Epoch [13/50], Step [58/297], Loss: 1054523.8750
+Epoch [13/50], Step [87/297], Loss: 1077580.3750
+Epoch [13/50], Step [116/297], Loss: 1076784.0000
+Epoch [13/50], Step [145/297], Loss: 1092881.1250
+Epoch [13/50], Step [174/297], Loss: 619363.5000
+Epoch [13/50], Step [203/297], Loss: 997170.9375
+Epoch [13/50], Step [232/297], Loss: 892166.6875
+Epoch [13/50], Step [261/297], Loss: 897445.6250
+Epoch [13/50], Step [290/297], Loss: 710006.0000
+Finished epoch 13, training time: 21.90 minutes, Loss:57601.5892
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [14/50], Step [0/297], Loss: 1258550.8750
+Epoch [14/50], Step [29/297], Loss: 736108.3750
+Epoch [14/50], Step [58/297], Loss: 1268122.1250
+Epoch [14/50], Step [87/297], Loss: 1228958.3750
+Epoch [14/50], Step [116/297], Loss: 860077.6250
+Epoch [14/50], Step [145/297], Loss: 630943.9375
+Epoch [14/50], Step [174/297], Loss: 1072148.7500
+Epoch [14/50], Step [203/297], Loss: 1224764.5000
+Epoch [14/50], Step [232/297], Loss: 633415.5000
+Epoch [14/50], Step [261/297], Loss: 691017.1875
+Epoch [14/50], Step [290/297], Loss: 668694.0000
+Finished epoch 14, training time: 21.92 minutes, Loss:57727.5488
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [15/50], Step [0/297], Loss: 680808.4375
+Epoch [15/50], Step [29/297], Loss: 861805.6250
+Epoch [15/50], Step [58/297], Loss: 544481.2500
+Epoch [15/50], Step [87/297], Loss: 527952.6875
+Epoch [15/50], Step [116/297], Loss: 824546.4375
+Epoch [15/50], Step [145/297], Loss: 932008.9375
+Epoch [15/50], Step [174/297], Loss: 1241145.5000
+Epoch [15/50], Step [203/297], Loss: 1135375.5000
+Epoch [15/50], Step [232/297], Loss: 1086536.6250
+Epoch [15/50], Step [261/297], Loss: 1127307.5000
+Epoch [15/50], Step [290/297], Loss: 1297860.7500
+Finished epoch 15, training time: 21.92 minutes, Loss:57898.1684
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [16/50], Step [0/297], Loss: 774534.4375
+Epoch [16/50], Step [29/297], Loss: 1011926.4375
+Epoch [16/50], Step [58/297], Loss: 812870.6250
+Epoch [16/50], Step [87/297], Loss: 1058238.3750
+Epoch [16/50], Step [116/297], Loss: 1120623.0000
+Epoch [16/50], Step [145/297], Loss: 743313.2500
+Epoch [16/50], Step [174/297], Loss: 996576.1875
+Epoch [16/50], Step [203/297], Loss: 863146.2500
+Epoch [16/50], Step [232/297], Loss: 987502.8750
+Epoch [16/50], Step [261/297], Loss: 1228415.3750
+Epoch [16/50], Step [290/297], Loss: 852004.6250
+Finished epoch 16, training time: 21.91 minutes, Loss:58159.7778
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [17/50], Step [0/297], Loss: 1075727.6250
+Epoch [17/50], Step [29/297], Loss: 701808.8125
+Epoch [17/50], Step [58/297], Loss: 1278792.5000
+Epoch [17/50], Step [87/297], Loss: 988119.3750
+Epoch [17/50], Step [116/297], Loss: 689856.8750
+Epoch [17/50], Step [145/297], Loss: 762373.3750
+Epoch [17/50], Step [174/297], Loss: 980559.1875
+Epoch [17/50], Step [203/297], Loss: 608228.0625
+Epoch [17/50], Step [232/297], Loss: 899291.0000
+Epoch [17/50], Step [261/297], Loss: 842642.8125
+Epoch [17/50], Step [290/297], Loss: 1074339.7500
+Finished epoch 17, training time: 21.90 minutes, Loss:57942.7138
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [18/50], Step [0/297], Loss: 900840.5625
+Epoch [18/50], Step [29/297], Loss: 800489.2500
+Epoch [18/50], Step [58/297], Loss: 1485481.2500
+Epoch [18/50], Step [87/297], Loss: 931260.8750
+Epoch [18/50], Step [116/297], Loss: 660069.0000
+Epoch [18/50], Step [145/297], Loss: 973517.7500
+Epoch [18/50], Step [174/297], Loss: 802536.1250
+Epoch [18/50], Step [203/297], Loss: 1065411.8750
+Epoch [18/50], Step [232/297], Loss: 738696.5625
+Epoch [18/50], Step [261/297], Loss: 979225.0000
+Epoch [18/50], Step [290/297], Loss: 903223.3750
+Finished epoch 18, training time: 21.92 minutes, Loss:58575.1919
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [19/50], Step [0/297], Loss: 479343.3750
+Epoch [19/50], Step [29/297], Loss: 464614.1875
+Epoch [19/50], Step [58/297], Loss: 1123128.6250
+Epoch [19/50], Step [87/297], Loss: 918427.3125
+Epoch [19/50], Step [116/297], Loss: 870562.9375
+Epoch [19/50], Step [145/297], Loss: 861565.8125
+Epoch [19/50], Step [174/297], Loss: 908449.8750
+Epoch [19/50], Step [203/297], Loss: 591353.6250
+Epoch [19/50], Step [232/297], Loss: 525495.3750
+Epoch [19/50], Step [261/297], Loss: 1239356.1250
+Epoch [19/50], Step [290/297], Loss: 961141.6875
+Finished epoch 19, training time: 21.90 minutes, Loss:58121.0909
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [20/50], Step [0/297], Loss: 649982.0000
+Epoch [20/50], Step [29/297], Loss: 1116093.7500
+Epoch [20/50], Step [58/297], Loss: 961627.5000
+Epoch [20/50], Step [87/297], Loss: 817671.3750
+Epoch [20/50], Step [116/297], Loss: 1335301.8750
+Epoch [20/50], Step [145/297], Loss: 1171252.0000
+Epoch [20/50], Step [174/297], Loss: 412877.8125
+Epoch [20/50], Step [203/297], Loss: 1100352.6250
+Epoch [20/50], Step [232/297], Loss: 1475726.7500
+Epoch [20/50], Step [261/297], Loss: 1030712.3750
+Epoch [20/50], Step [290/297], Loss: 1035915.3750
+Finished epoch 20, training time: 21.91 minutes, Loss:57406.5993
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [21/50], Step [0/297], Loss: 808447.8750
+Epoch [21/50], Step [29/297], Loss: 1463268.1250
+Epoch [21/50], Step [58/297], Loss: 709128.6875
+Epoch [21/50], Step [87/297], Loss: 1063898.0000
+Epoch [21/50], Step [116/297], Loss: 970668.8750
+Epoch [21/50], Step [145/297], Loss: 1007942.6875
+Epoch [21/50], Step [174/297], Loss: 794077.8125
+Epoch [21/50], Step [203/297], Loss: 783079.8125
+Epoch [21/50], Step [232/297], Loss: 1064824.0000
+Epoch [21/50], Step [261/297], Loss: 745298.0000
+Epoch [21/50], Step [290/297], Loss: 759802.1250
+Finished epoch 21, training time: 21.90 minutes, Loss:58115.7576
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [22/50], Step [0/297], Loss: 999403.1875
+Epoch [22/50], Step [29/297], Loss: 935480.2500
+Epoch [22/50], Step [58/297], Loss: 1247408.3750
+Epoch [22/50], Step [87/297], Loss: 711850.3125
+Epoch [22/50], Step [116/297], Loss: 1111146.0000
+Epoch [22/50], Step [145/297], Loss: 799509.3750
+Epoch [22/50], Step [174/297], Loss: 924648.1875
+Epoch [22/50], Step [203/297], Loss: 599364.1875
+Epoch [22/50], Step [232/297], Loss: 1016425.8750
+Epoch [22/50], Step [261/297], Loss: 974873.5625
+Epoch [22/50], Step [290/297], Loss: 1078095.1250
+Finished epoch 22, training time: 21.93 minutes, Loss:58670.4579
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [23/50], Step [0/297], Loss: 1073760.1250
+Epoch [23/50], Step [29/297], Loss: 879566.3750
+Epoch [23/50], Step [58/297], Loss: 733333.7500
+Epoch [23/50], Step [87/297], Loss: 1746358.6250
+Epoch [23/50], Step [116/297], Loss: 1054990.1250
+Epoch [23/50], Step [145/297], Loss: 966342.3750
+Epoch [23/50], Step [174/297], Loss: 681642.1875
+Epoch [23/50], Step [203/297], Loss: 873510.5625
+Epoch [23/50], Step [232/297], Loss: 678702.4375
+Epoch [23/50], Step [261/297], Loss: 458679.0312
+Epoch [23/50], Step [290/297], Loss: 1177810.7500
+Finished epoch 23, training time: 21.90 minutes, Loss:57311.9663
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [24/50], Step [0/297], Loss: 734445.5000
+Epoch [24/50], Step [29/297], Loss: 828441.3125
+Epoch [24/50], Step [58/297], Loss: 771787.0000
+Epoch [24/50], Step [87/297], Loss: 1179016.5000
+Epoch [24/50], Step [116/297], Loss: 872246.2500
+Epoch [24/50], Step [145/297], Loss: 1121633.5000
+Epoch [24/50], Step [174/297], Loss: 572268.8750
+Epoch [24/50], Step [203/297], Loss: 835980.7500
+Epoch [24/50], Step [232/297], Loss: 816906.4375
+Epoch [24/50], Step [261/297], Loss: 725655.3750
+Epoch [24/50], Step [290/297], Loss: 1093166.2500
+Finished epoch 24, training time: 21.91 minutes, Loss:58860.0471
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [25/50], Step [0/297], Loss: 1047359.3750
+Epoch [25/50], Step [29/297], Loss: 1017650.1875
+Epoch [25/50], Step [58/297], Loss: 1194604.5000
+Epoch [25/50], Step [87/297], Loss: 600097.0000
+Epoch [25/50], Step [116/297], Loss: 980596.5625
+Epoch [25/50], Step [145/297], Loss: 1252458.1250
+Epoch [25/50], Step [174/297], Loss: 834815.8750
+Epoch [25/50], Step [203/297], Loss: 1068416.1250
+Epoch [25/50], Step [232/297], Loss: 1429754.1250
+Epoch [25/50], Step [261/297], Loss: 639795.1875
+Epoch [25/50], Step [290/297], Loss: 834084.6875
+Finished epoch 25, training time: 21.90 minutes, Loss:57679.2323
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [26/50], Step [0/297], Loss: 521044.3750
+Epoch [26/50], Step [29/297], Loss: 849528.0000
+Epoch [26/50], Step [58/297], Loss: 1173024.6250
+Epoch [26/50], Step [87/297], Loss: 1633002.3750
+Epoch [26/50], Step [116/297], Loss: 1010566.1250
+Epoch [26/50], Step [145/297], Loss: 1266998.7500
+Epoch [26/50], Step [174/297], Loss: 1223902.7500
+Epoch [26/50], Step [203/297], Loss: 1260630.8750
+Epoch [26/50], Step [232/297], Loss: 1076098.5000
+Epoch [26/50], Step [261/297], Loss: 950487.4375
+Epoch [26/50], Step [290/297], Loss: 1103882.6250
+Finished epoch 26, training time: 21.92 minutes, Loss:58161.7374
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [27/50], Step [0/297], Loss: 1043869.1875
+Epoch [27/50], Step [29/297], Loss: 1094663.6250
+Epoch [27/50], Step [58/297], Loss: 575935.5000
+Epoch [27/50], Step [87/297], Loss: 1032504.2500
+Epoch [27/50], Step [116/297], Loss: 892608.3750
+Epoch [27/50], Step [145/297], Loss: 695467.4375
+Epoch [27/50], Step [174/297], Loss: 862074.5000
+Epoch [27/50], Step [203/297], Loss: 794077.0000
+Epoch [27/50], Step [232/297], Loss: 595097.7500
+Epoch [27/50], Step [261/297], Loss: 918865.0625
+Epoch [27/50], Step [290/297], Loss: 749485.2500
+Finished epoch 27, training time: 21.90 minutes, Loss:58211.7441
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [28/50], Step [0/297], Loss: 795336.6875
+Epoch [28/50], Step [29/297], Loss: 815296.0625
+Epoch [28/50], Step [58/297], Loss: 745937.0000
+Epoch [28/50], Step [87/297], Loss: 865921.8125
+Epoch [28/50], Step [116/297], Loss: 1447787.2500
+Epoch [28/50], Step [145/297], Loss: 842961.2500
+Epoch [28/50], Step [174/297], Loss: 1193045.0000
+Epoch [28/50], Step [203/297], Loss: 708724.0000
+Epoch [28/50], Step [232/297], Loss: 819650.5625
+Epoch [28/50], Step [261/297], Loss: 829648.3750
+Epoch [28/50], Step [290/297], Loss: 1263397.8750
+Finished epoch 28, training time: 21.91 minutes, Loss:57391.3670
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [29/50], Step [0/297], Loss: 782704.0625
+Epoch [29/50], Step [29/297], Loss: 1269430.1250
+Epoch [29/50], Step [58/297], Loss: 1278042.0000
+Epoch [29/50], Step [87/297], Loss: 878357.8750
+Epoch [29/50], Step [116/297], Loss: 615885.8125
+Epoch [29/50], Step [145/297], Loss: 679297.3750
+Epoch [29/50], Step [174/297], Loss: 913678.5625
+Epoch [29/50], Step [203/297], Loss: 768559.6875
+Epoch [29/50], Step [232/297], Loss: 733458.1875
+Epoch [29/50], Step [261/297], Loss: 775452.0625
+Epoch [29/50], Step [290/297], Loss: 847118.1250
+Finished epoch 29, training time: 21.90 minutes, Loss:56843.8788
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [30/50], Step [0/297], Loss: 874369.4375
+Epoch [30/50], Step [29/297], Loss: 814459.6875
+Epoch [30/50], Step [58/297], Loss: 874230.5000
+Epoch [30/50], Step [87/297], Loss: 1111283.5000
+Epoch [30/50], Step [116/297], Loss: 680917.9375
+Epoch [30/50], Step [145/297], Loss: 850595.3750
+Epoch [30/50], Step [174/297], Loss: 1005884.3125
+Epoch [30/50], Step [203/297], Loss: 1142390.8750
+Epoch [30/50], Step [232/297], Loss: 699295.0625
+Epoch [30/50], Step [261/297], Loss: 775948.0000
+Epoch [30/50], Step [290/297], Loss: 1127217.6250
+Finished epoch 30, training time: 21.91 minutes, Loss:58143.3199
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [31/50], Step [0/297], Loss: 1000090.7500
+Epoch [31/50], Step [29/297], Loss: 962062.2500
+Epoch [31/50], Step [58/297], Loss: 1200318.2500
+Epoch [31/50], Step [87/297], Loss: 914096.5625
+Epoch [31/50], Step [116/297], Loss: 807781.7500
+Epoch [31/50], Step [145/297], Loss: 792379.5625
+Epoch [31/50], Step [174/297], Loss: 707799.5000
+Epoch [31/50], Step [203/297], Loss: 1244744.2500
+Epoch [31/50], Step [232/297], Loss: 1240588.2500
+Epoch [31/50], Step [261/297], Loss: 895088.8125
+Epoch [31/50], Step [290/297], Loss: 1109074.6250
+Finished epoch 31, training time: 21.90 minutes, Loss:58532.7744
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [32/50], Step [0/297], Loss: 902578.2500
+Epoch [32/50], Step [29/297], Loss: 796058.3125
+Epoch [32/50], Step [58/297], Loss: 927031.6250
+Epoch [32/50], Step [87/297], Loss: 1034962.2500
+Epoch [32/50], Step [116/297], Loss: 578784.8750
+Epoch [32/50], Step [145/297], Loss: 1262829.6250
+Epoch [32/50], Step [174/297], Loss: 930901.9375
+Epoch [32/50], Step [203/297], Loss: 897001.0000
+Epoch [32/50], Step [232/297], Loss: 1095760.0000
+Epoch [32/50], Step [261/297], Loss: 1044100.1250
+Epoch [32/50], Step [290/297], Loss: 1059765.6250
+Finished epoch 32, training time: 21.91 minutes, Loss:57246.9899
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [33/50], Step [0/297], Loss: 1040805.6250
+Epoch [33/50], Step [29/297], Loss: 920879.3750
+Epoch [33/50], Step [58/297], Loss: 1434918.6250
+Epoch [33/50], Step [87/297], Loss: 1123797.3750
+Epoch [33/50], Step [116/297], Loss: 1640391.0000
+Epoch [33/50], Step [145/297], Loss: 1435966.1250
+Epoch [33/50], Step [174/297], Loss: 762975.0000
+Epoch [33/50], Step [203/297], Loss: 1135429.7500
+Epoch [33/50], Step [232/297], Loss: 918696.8750
+Epoch [33/50], Step [261/297], Loss: 1396461.1250
+Epoch [33/50], Step [290/297], Loss: 772550.2500
+Finished epoch 33, training time: 21.90 minutes, Loss:58120.4512
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [34/50], Step [0/297], Loss: 1291432.7500
+Epoch [34/50], Step [29/297], Loss: 743093.8125
+Epoch [34/50], Step [58/297], Loss: 1429123.6250
+Epoch [34/50], Step [87/297], Loss: 929436.1250
+Epoch [34/50], Step [116/297], Loss: 1125322.1250
+Epoch [34/50], Step [145/297], Loss: 747695.5625
+Epoch [34/50], Step [174/297], Loss: 1052048.0000
+Epoch [34/50], Step [203/297], Loss: 1100657.3750
+Epoch [34/50], Step [232/297], Loss: 743950.8125
+Epoch [34/50], Step [261/297], Loss: 795234.1875
+Epoch [34/50], Step [290/297], Loss: 1350908.6250
+Finished epoch 34, training time: 21.91 minutes, Loss:57387.8182
+--------------------------------------------------
+Current learning rate:0.05
+Epoch [35/50], Step [0/297], Loss: 1021509.6250
+Epoch [35/50], Step [29/297], Loss: 882843.6250
+Save ckpt on exception ...
+Finished training. Total training times spent: 771.90 minutes

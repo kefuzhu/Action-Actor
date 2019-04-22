@@ -1,0 +1,80 @@
+--------------------------------------------------
+Current learning rate:0.01
+Epoch [0/50], Step [0/396], Loss: 703235.2500
+Epoch [0/50], Step [39/396], Loss: 1017602.9375
+Epoch [0/50], Step [78/396], Loss: 834565.9375
+Epoch [0/50], Step [117/396], Loss: 873067.4375
+Epoch [0/50], Step [156/396], Loss: 732507.6875
+Epoch [0/50], Step [195/396], Loss: 929175.6250
+Epoch [0/50], Step [234/396], Loss: 731604.5625
+Epoch [0/50], Step [273/396], Loss: 987090.1875
+Epoch [0/50], Step [312/396], Loss: 844509.4375
+Epoch [0/50], Step [351/396], Loss: 891695.6250
+Epoch [0/50], Step [390/396], Loss: 1031052.0625
+Finished epoch 0, training time: 24.50 minutes, Loss:71912.4040
+--------------------------------------------------
+Current learning rate:0.01
+Epoch [1/50], Step [0/396], Loss: 1182814.6250
+Epoch [1/50], Step [39/396], Loss: 1068119.6250
+Epoch [1/50], Step [78/396], Loss: 797986.4375
+Epoch [1/50], Step [117/396], Loss: 655063.5625
+Epoch [1/50], Step [156/396], Loss: 782220.7500
+Epoch [1/50], Step [195/396], Loss: 969674.7500
+Epoch [1/50], Step [234/396], Loss: 881744.2500
+Epoch [1/50], Step [273/396], Loss: 829189.1875
+Epoch [1/50], Step [312/396], Loss: 763870.0625
+Epoch [1/50], Step [351/396], Loss: 762134.6250
+Epoch [1/50], Step [390/396], Loss: 752631.8750
+Finished epoch 1, training time: 24.53 minutes, Loss:69066.6195
+--------------------------------------------------
+Current learning rate:0.01
+Epoch [2/50], Step [0/396], Loss: 1129978.5000
+Epoch [2/50], Step [39/396], Loss: 900081.7500
+Epoch [2/50], Step [78/396], Loss: 746401.8125
+Epoch [2/50], Step [117/396], Loss: 635854.7500
+Epoch [2/50], Step [156/396], Loss: 691846.4375
+Epoch [2/50], Step [195/396], Loss: 676367.1875
+Epoch [2/50], Step [234/396], Loss: 925071.0625
+Epoch [2/50], Step [273/396], Loss: 514949.8438
+Epoch [2/50], Step [312/396], Loss: 895549.3750
+Epoch [2/50], Step [351/396], Loss: 929427.8750
+Epoch [2/50], Step [390/396], Loss: 719393.5625
+Finished epoch 2, training time: 24.51 minutes, Loss:67005.2593
+--------------------------------------------------
+Current learning rate:0.01
+Epoch [3/50], Step [0/396], Loss: 992611.1250
+Epoch [3/50], Step [39/396], Loss: 917648.5000
+Epoch [3/50], Step [78/396], Loss: 679625.8125
+Epoch [3/50], Step [117/396], Loss: 639021.4375
+Epoch [3/50], Step [156/396], Loss: 943974.5625
+Epoch [3/50], Step [195/396], Loss: 853692.3125
+Epoch [3/50], Step [234/396], Loss: 920271.1250
+Epoch [3/50], Step [273/396], Loss: 652684.6250
+Epoch [3/50], Step [312/396], Loss: 682262.1875
+Epoch [3/50], Step [351/396], Loss: 821219.7500
+Epoch [3/50], Step [390/396], Loss: 629363.6875
+Finished epoch 3, training time: 24.51 minutes, Loss:65577.6498
+--------------------------------------------------
+Current learning rate:0.01
+Epoch [4/50], Step [0/396], Loss: 675349.6875
+Epoch [4/50], Step [39/396], Loss: 863516.3125
+Epoch [4/50], Step [78/396], Loss: 668564.3750
+Epoch [4/50], Step [117/396], Loss: 672961.2500
+Epoch [4/50], Step [156/396], Loss: 732779.1875
+Epoch [4/50], Step [195/396], Loss: 934314.8125
+Epoch [4/50], Step [234/396], Loss: 692624.7500
+Epoch [4/50], Step [273/396], Loss: 853833.3750
+Epoch [4/50], Step [312/396], Loss: 574917.7500
+Epoch [4/50], Step [351/396], Loss: 735900.6875
+Epoch [4/50], Step [390/396], Loss: 826900.2500
+Finished epoch 4, training time: 24.53 minutes, Loss:64119.7037
+--------------------------------------------------
+Current learning rate:0.01
+Epoch [5/50], Step [0/396], Loss: 608300.8125
+Epoch [5/50], Step [39/396], Loss: 730015.9375
+Epoch [5/50], Step [78/396], Loss: 784744.4375
+Epoch [5/50], Step [117/396], Loss: 852672.1250
+Epoch [5/50], Step [156/396], Loss: 873729.6250
+Epoch [5/50], Step [195/396], Loss: 423224.6875
+Save ckpt on exception ...
+Finished training. Total training times spent: 136.50 minutes
