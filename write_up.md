@@ -98,4 +98,42 @@ The fine-tuned inception_v3 model can reach `Precision: 47.6 Recall: 50.0 F1: 46
 
 ## Task 2: Actor-Action Detection
 
-Model Used: e2e_faster_rcnn_R-50-FPN_2x.yaml
+🦄🦄🦄🦄🦄🦄🦄
+
+## Appendix
+
+**Code to extract loss and accuracy from log file**
+
+```python
+def extract_log(log_file):
+    # Required module
+    import re
+    import numpy as np
+    # Initialize a numpy array to store epoch number
+    epoch_array = np.array([])
+    # Initialize a numpy array to store extracted loss
+    loss_array = np.array([])
+    # Initialize a numpy array to store extracted accuracy
+    acc_array = np.array([])
+    
+    epoch_counter = 0
+    
+    with open(log_file,'r') as f:
+        for line in f.readlines():
+            if re.match(r'^Loss.*',line):
+                epoch_counter += 1
+                epoch_array = np.append(epoch_array, epoch_counter)
+                
+                loss, acc = re.findall(r'(0.\d*)',line)
+                loss = float(loss)
+                acc = float(acc)
+                loss_array = np.append(loss_array, loss)
+                acc_array = np.append(acc_array, acc)
+                
+    # Close the file            
+    f.close()
+                
+    log = {'epoch':epoch_array,'loss':loss_array,'accuracy':acc_array}
+    
+    return log
+```
