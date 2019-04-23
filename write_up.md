@@ -149,22 +149,7 @@ The fine-tuned FCN32s model can reach `Accuracy: 35.35 Mean IoU: 25.33` on the v
 
 ## Appendix
 
-```python
-   def cross_entropy2d(input,target,weight=None,size_average=False):
-       n,c,h,w = input.size()
-       log_p = F.log_softmax(input,dim=1)
-
-       log_p = log_p.transpose(1,2).transpose(2,3).contiguous()
-       log_p = log_p[target.view(n,h,w,1).repeat(1,1,1,c) >=0]
-       log_p = log_p.view(-1,c)
-
-       mask = target>=0
-       target = target[mask]
-       loss = F.nll_loss(log_p,target,weight=weight,reduction='sum')
-       if size_average:
-           loss/=mask.data_sum()
-       return loss
-```
+**Extract loss and accuracy from training log**
 
 ```python
 def extract_log(log_file):
@@ -198,4 +183,23 @@ def extract_log(log_file):
     log = {'epoch':epoch_array,'loss':loss_array,'accuracy':acc_array}
     
     return log
+```
+
+**Cross Entropy for 2D**
+
+```python
+def cross_entropy2d(input,target,weight=None,size_average=False):
+   n,c,h,w = input.size()
+   log_p = F.log_softmax(input,dim=1)
+
+   log_p = log_p.transpose(1,2).transpose(2,3).contiguous()
+   log_p = log_p[target.view(n,h,w,1).repeat(1,1,1,c) >=0]
+   log_p = log_p.view(-1,c)
+
+   mask = target>=0
+   target = target[mask]
+   loss = F.nll_loss(log_p,target,weight=weight,reduction='sum')
+   if size_average:
+       loss/=mask.data_sum()
+   return loss
 ```
