@@ -19,8 +19,10 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def predict(args):
     
-    val_dataset = a2d_dataset.A2DDataset(val_cfg)
-    val_loader = DataLoader(val_dataset,batch_size=1,shuffle=False,num_workers=1)
+    # val_dataset = a2d_dataset.A2DDataset(val_cfg)
+    # val_loader = DataLoader(val_dataset,batch_size=1,shuffle=False,num_workers=1)
+    test_dataset = a2d_dataset.A2DDataset(test_cfg)
+    test_loader = DataLoader(test_dataset,batch_size=1,shuffle=False,num_workers=1)
 
     print('Loading model...')
     model = torchfcn.models.FCN32s(args.num_cls).to(device)
@@ -32,30 +34,47 @@ def predict(args):
     # Total number of steps per epoch
     total_step = len(val_loader)
 
-    # model.eval()
+    # print('Predicting class label on pixel level...')
+    # start = time.time()
+    # with torch.no_grad():
+    #     for i,data in enumerate(val_loader):
+
+    #         images = data[0].to(device)
+    #         gt = data[1].to(device)#[224,224]
+    #         output = model(images)
+    #         mask = output.data.max(1)[1].cpu().numpy()[:,:,:]
+    #         mask_list.append(mask)
+    #         gt_list.append(gt.cpu().numpy())
+    #         # Print log every 1/10 of the total step
+    #         if i % (total_step//10) == 0:
+    #             print("Step [{}/{}]".format(i, total_step))
+
     print('Predicting class label on pixel level...')
     start = time.time()
     with torch.no_grad():
-        for i,data in enumerate(val_loader):
+        for i,data in enumerate(test_loader):
 
-            images = data[0].to(device)
-            gt = data[1].to(device)#[224,224]
+            images = data.to(device)
             output = model(images)
             mask = output.data.max(1)[1].cpu().numpy()[:,:,:]
-            mask_list.append(mask)
-            gt_list.append(gt.cpu().numpy())
+            mask_list.append(mask.astype(np.uint8))            
             # Print log every 1/10 of the total step
             if i % (total_step//10) == 0:
                 print("Step [{}/{}]".format(i, total_step))
 
     print('Prediction took {} minutes'.format((time.time()-start)/60))
 
-    with open('models/eval_mask_pred.pkl', 'wb') as f:
+    # with open('models/eval_mask_pred.pkl', 'wb') as f:
+    #     print('Dumping mask file...')
+    #     pickle.dump(mask_list,f)
+    # with open('models/eval_mask_gt.pkl','wb') as f:
+    #     print('Dumping ground truth...')
+    #     pickle.dump(gt_list,f)
+
+    with open('models/test_mask_pred.pkl','wb') as f:
         print('Dumping mask file...')
         pickle.dump(mask_list,f)
-    with open('models/eval_mask_gt.pkl','wb') as f:
-        print('Dumping ground truth...')
-        pickle.dump(gt_list,f)
+
 
     print('Finished prediction!')
     

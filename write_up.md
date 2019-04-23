@@ -24,6 +24,13 @@ By doing the pre-processing above, we added some noises into our training data a
 
 We used the [**inception_v3**](https://arxiv.org/abs/1512.00567) model pre-trained on ImageNet. 
 
+<center>
+<img src='graphs/Inception_v3_structure.png'>
+
+Figure 1. Model Structure for Inception_v3
+</center>
+
+
 Because we want to maintain the features extracted by the pre-trained **inception_v3** model, so we freezed all convolutional layers and fine-tuning the model by updating the parameters in the rest layers.
 
 Below is the list of names for all layers within **inception_v3**
@@ -68,7 +75,10 @@ The total loss is the combination of loss from both **primary net** and **auxili
 $Loss = loss_{primary} + 0.3 \cdot loss_{auxiliary}$
 
 <img src='graphs/loss.png'>
+Figure 2. Training Loss for Inception_v3
+
 <img src='graphs/accuracy.png'>
+Figure 3. Traning Accuracy for Inception_v3
 </center>
 
 #### 4. Optimization method
@@ -76,7 +86,7 @@ $Loss = loss_{primary} + 0.3 \cdot loss_{auxiliary}$
 We train the model with mini-batch of size `10` and used the stochastic gradient descent (`optim.SGD`) to optimize the model with step-wise learning rate and momentum of `0.9`
 
 ```
-Epoch 1-20		Learning rate:0.05
+Epoch:1-20		Learning rate:0.05
 Epoch:21-40		Learning rate:0.025
 Epoch:41-60		Learning rate:0.0125
 Epoch:61-80		Learning rate:0.00625
@@ -96,7 +106,7 @@ We freezed the convolutional layers in the pre-trained inception_v3 model and tr
 
 The fine-tuned inception_v3 model can reach `Precision: 47.6 Recall: 50.0 F1: 46.9` on the validation dataset
 
-## Task 2: Actor-Action Detection
+## Task 2: Actor-Action Segmentation
 
 #### 1. Pre-processing
 
@@ -107,13 +117,25 @@ Same method from Multi-Label Actor-Action Classification to pre-process the data
 We used the
 [**FCN32s**](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf) model, which is widely used as a baseline model. With VGG16 backbone model, we changed the final output layer to perform up-sampling that has same size as the input image size.
 
+<center>
+<img src='graphs/FCN32s_structure.png'>
+
+Figure 4. Model Structure for Fully Convolutional Networks (FCN)
+</center>
+
 #### 3. Loss and Accuracy
 
 For Loss function, we used cross entropy loss function for 2D data, since we are calculating loss for each pixel and sum them up all together.
 
 #### 4.Optimization method
 
-We train the model with batch size `4` and used `(stochastic gradient descent)` to optimize the model with step-wise learning rate and momentum of `0.9`. 
+We train the model with batch size `12` and used `(stochastic gradient descent)` to optimize the model with step-wise learning rate and momentum of `0.9`. 
+
+```
+Epoch:1-15		Learning rate:1e-10
+Epoch:16-31		Learning rate:5e-11
+Epoch:32-50		Learning rate:2.5e-11
+```
 
 #### 5.Novelty of our method
 
@@ -123,7 +145,7 @@ For FCN32s, we trained 50 epochs with step-wise decreasing learning rate, as men
 
 ### Performance on validation set
 
-The fine-tuned FCN32s model can reach `Accuracy: 35.34 Mean IoU: 25.32` on the validation dataset
+The fine-tuned FCN32s model can reach `Accuracy: 35.35 Mean IoU: 25.33` on the validation dataset
 
 ## Appendix
 
