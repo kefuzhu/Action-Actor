@@ -103,6 +103,7 @@ The fine-tuned inception_v3 model can reach `Precision: 47.6 Recall: 50.0 F1: 46
 Same method from Multi-Label Actor-Action Classification to pre-process the data was employed
 
 #### 2. Network architecture
+
 We used the
 [**FCN32s**](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf) model, which is widely used as a baseline model. With VGG16 backbone model, we changed the final output layer to perform up-sampling that has same size as the input image size.
 
@@ -111,7 +112,14 @@ We used the
 For Loss function, we used cross entropy loss function for 2D data, since we are calculating loss for each pixel and sum them up all together.
 
 #### 4.Optimization method
+
 We train the model with batch size `4` and used `(stochastic gradient descent)` to optimize the model with step-wise learning rate and momentum of `0.9`. 
+
+#### 5.Novelty of our method
+
+We tried to train multiple models ranging from PSPNet, SegNet, UNet. However, due to unresolved circumstance that the weight for background label dominated the learning process, we employed FCN32s as TA recommended.
+
+For FCN32s, we trained 50 epochs with step-wise decreasing learning rate, as mentioned above.
 
 ### Performance on validation set
 
