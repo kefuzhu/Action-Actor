@@ -98,11 +98,43 @@ The fine-tuned inception_v3 model can reach `Precision: 47.6 Recall: 50.0 F1: 46
 
 ## Task 2: Actor-Action Detection
 
-🦄🦄🦄🦄🦄🦄🦄
+#### 1. Pre-processing
+
+Same method from Multi-Label Actor-Action Classification to pre-process the data was employed
+
+#### 2. Network architecture
+We used the
+[**FCN32s**](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf) model, which is widely used as a baseline model. With VGG16 backbone model, we changed the final output layer to perform up-sampling that has same size as the input image size.
+
+#### 3. Loss and Accuracy
+
+For Loss function, we used cross entropy loss function for 2D data, since we are calculating loss for each pixel and sum them up all together.
+
+#### 4.Optimization method
+We train the model with batch size `4` and used `(stochastic gradient descent)` to optimize the model with step-wise learning rate and momentum of `0.9`. 
+
+### Performance on validation set
+
+The fine-tuned FCN32s model can reach `Accuracy: 35.34 Mean IoU: 25.32` on the validation dataset
 
 ## Appendix
 
-**Code to extract loss and accuracy from log file**
+```python
+   def cross_entropy2d(input,target,weight=None,size_average=False):
+       n,c,h,w = input.size()
+       log_p = F.log_softmax(input,dim=1)
+
+       log_p = log_p.transpose(1,2).transpose(2,3).contiguous()
+       log_p = log_p[target.view(n,h,w,1).repeat(1,1,1,c) >=0]
+       log_p = log_p.view(-1,c)
+
+       mask = target>=0
+       target = target[mask]
+       loss = F.nll_loss(log_p,target,weight=weight,reduction='sum')
+       if size_average:
+           loss/=mask.data_sum()
+       return loss
+```
 
 ```python
 def extract_log(log_file):
